@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Emisi Karbon Global",
+    "value": "36.3 Miliar Ton",
+    "unit": "CO₂/tahun"
+  },
+  {
+    "label": "Kenaikan Suhu Rata-rata",
+    "value": "1.2°C",
+    "unit": "Sejak 1880"
+  },
+  {
+    "label": "Deforestasi Tahunan",
+    "value": "10 Juta Hektar",
+    "unit": "Hutan hilang tiap tahun"
+  }
+]
