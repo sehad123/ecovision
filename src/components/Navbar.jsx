@@ -6,7 +6,6 @@ export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
 
   const links = [
-    { name: "Home", href: "#hero" },
     { name: "Edukasi", href: "#education-video" },
     { name: "Infografis", href: "#education-infographic" },
     { name: "Aksi", href: "#actions" },
@@ -37,7 +36,7 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [links]);
+  }, []);
 
   useEffect(() => {
     if (darkMode) {
@@ -55,8 +54,8 @@ export default function Navbar() {
           EcoVision
         </a>
 
-        {/* Middle nav links */}
-        <div className="hidden md:flex space-x-6 mx-auto">
+        {/* Middle nav links (Desktop) */}
+        <div className="hidden md:flex space-x-6">
           {links.map((link) => (
             <a key={link.name} href={link.href} className={`transition-colors ${activeSection === link.href.slice(1) ? "text-yellow-300 font-semibold underline" : "hover:text-green-400 dark:hover:text-yellow-500"}`}>
               {link.name}
@@ -64,7 +63,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Dark mode toggle */}
+        {/* Dark mode toggle (Desktop) */}
         <div className="hidden md:flex items-center">
           <button onClick={() => setDarkMode(!darkMode)} className="ml-4 px-2 py-1 rounded bg-gray-800 text-white hover:bg-gray-700 transition dark:bg-yellow-400 dark:text-black dark:hover:bg-yellow-300" title="Toggle Dark Mode">
             {darkMode ? "☀️" : "🌙"}
@@ -73,8 +72,8 @@ export default function Navbar() {
 
         {/* Mobile menu button */}
         <button onClick={() => setIsOpen(!isOpen)} className="md:hidden focus:outline-none" aria-label="Toggle Menu">
-          <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-            {isOpen ? <path fillRule="evenodd" d="M6 18L18 6M6 6l12 12" /> : <path fillRule="evenodd" d="M4 6h16M4 12h16M4 18h16" />}
+          <svg className="w-6 h-6 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            {isOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
           </svg>
         </button>
       </div>
